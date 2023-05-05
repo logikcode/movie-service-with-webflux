@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: local
+restClient:
+  serviceUrl: http://localhost:8080/v1/theurl
+  serviceUrl2: http://localhost:8081/v1/theurl2
+
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - local
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: local
